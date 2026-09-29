@@ -13,6 +13,7 @@
 <meta property="og:title" content="A. Yvan Guifo Fodjo">
 <meta property="og:description" content="PhD in computer science, lecturer-researcher at EFREI Paris.">
 <meta property="og:type" content="profile">
+<meta property="og:image" content="https://yvanguifo.github.io/portrait.jpg">
 <meta property="og:url" content="https://yvanguifo.github.io/en/">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -35,9 +36,14 @@ a{color:var(--link);text-decoration:none;border-bottom:1px solid rgba(20,69,111,
 a:hover{border-bottom-color:var(--link)}
 a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
 
-.lang{font-size:.82rem;color:var(--faint);margin-bottom:2.25rem}
-.lang a{color:var(--faint);border-bottom-color:var(--rule)}
-.lang a:hover{color:var(--ink);border-bottom-color:var(--faint)}
+.topbar{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:baseline;justify-content:space-between;
+  font-size:.86rem;padding-bottom:.85rem;margin-bottom:2.25rem;border-bottom:1px solid var(--rule)}
+.topbar ul{list-style:none;display:flex;flex-wrap:wrap;gap:1.15rem}
+.topbar a{color:var(--muted);border-bottom:none}
+.topbar a:hover{color:var(--ink);border-bottom:1px solid var(--faint)}
+.topbar .lang a{color:var(--faint)}
+.masthead{display:flex;gap:1.75rem;align-items:flex-start;margin-bottom:1.4rem}
+.portrait{width:132px;height:132px;flex-shrink:0;display:block;border:1px solid var(--rule)}
 h1{font-size:1.6rem;font-weight:600;letter-spacing:-.015em;line-height:1.25;margin-bottom:.35rem}
 .role{color:var(--muted);font-size:.98rem;margin-bottom:1.5rem}
 .lede{margin-bottom:1.5rem}
@@ -60,8 +66,10 @@ h3:first-of-type{margin-top:0}
 
 .pub{margin-bottom:1.35rem;display:grid;grid-template-columns:3.25rem 1fr;gap:.9rem}
 .pub-year{color:var(--faint);font-size:.88rem;font-variant-numeric:tabular-nums;padding-top:.08rem}
-.pub-title{display:block}
+.pub-tag{font-weight:600}
+.pub-title{font-weight:600}
 .pub-meta{color:var(--muted);font-size:.9rem}
+.pub-venue{color:var(--muted);font-size:.9rem;font-style:italic}
 .pub-doi{font-size:.85rem;color:var(--faint)}
 .pub-doi a{color:var(--faint);border-bottom-color:var(--rule)}
 .pub-doi a:hover{color:var(--ink)}
@@ -83,13 +91,15 @@ footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);fon
 
 @media(max-width:640px){
   .page{padding:2.5rem 1.25rem 3rem}
+  .masthead{flex-direction:column;gap:1.1rem}
+  .portrait{width:112px;height:112px}
   .pub,.entry{grid-template-columns:1fr;gap:.2rem}
   .pub-year,.entry-when{padding-top:0}
 }
 @media print{
   body{font-size:10.5pt;color:#000}
   .page{max-width:none;padding:0}
-  .lang{display:none}
+  .topbar{display:none}
   a{color:#000;border:none}
   section{break-inside:avoid}
 }
@@ -98,15 +108,30 @@ footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);fon
 <body>
 <main class="page">
 
-  <p class="lang"><a href="../">Français</a></p>
+  <nav class="topbar">
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#software">Software</a></li>
+      <li><a href="#service">Distinctions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="lang"><a href="../">Français</a></span>
+  </nav>
 
   <header>
-    <h1>A. Yvan Guifo Fodjo</h1>
-    <p class="role">PhD in computer science &middot; Lecturer-researcher, EFREI Paris — EFREI Research Lab</p>
+    <div class="masthead">
+      <img class="portrait" src="../portrait.jpg" width="440" height="440" alt="Portrait of A. Yvan Guifo Fodjo">
+      <div>
+        <h1>A. Yvan Guifo Fodjo</h1>
+        <p class="role">PhD in computer science &middot; Lecturer-researcher, EFREI Paris — EFREI Research Lab</p>
+        <p class="meta">
+          <a href="mailto:yvan.guifo-fodjo@efrei.fr">yvan.guifo-fodjo@efrei.fr</a><span class="sep">·</span><a href="https://github.com/YvanGuifo" rel="noopener">GitHub</a><span class="sep">·</span><a href="https://www.linkedin.com/in/a-yvan-guifo-fodjo-35847a126/" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+    </div>
     <p class="lede">My work concerns the engineering of responsible computing: sustainable software engineering, frugal and explainable artificial intelligence, and the modelling and simulation of complex systems applied to public health and sustainable development. I treat software systems as socio-technical artefacts subject to environmental, ethical and decision-making constraints.</p>
-    <p class="meta">
-      <a href="mailto:yvan.guifo-fodjo@efrei.fr">yvan.guifo-fodjo@efrei.fr</a><span class="sep">·</span><a href="https://github.com/YvanGuifo" rel="noopener">GitHub</a><span class="sep">·</span><a href="https://www.linkedin.com/in/a-yvan-guifo-fodjo-35847a126/" rel="noopener">LinkedIn</a>
-    </p>
   </header>
 
   <section id="research">
@@ -131,24 +156,27 @@ footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);fon
     <div class="pub">
       <div class="pub-year">2026</div>
       <div>
-        <span class="pub-title">A Modality-Invariant and Fair Representation Framework for Skin Disease Classification</span>
-        <div class="pub-meta">AFRICAI 2026, MICCAI 2026 workshop — Strasbourg, France</div>
+        <div><span class="pub-tag">[AFRICAI]</span> <span class="pub-title">A Modality-Invariant and Fair Representation Framework for Skin Disease Classification</span></div>
+        <div class="pub-meta"><strong>Guifo Fodjo A.</strong> et al.</div>
+        <div class="pub-venue">AFRICAI 2026, MICCAI 2026 workshop — Strasbourg, France</div>
       </div>
     </div>
 
     <div class="pub">
       <div class="pub-year">2026</div>
       <div>
-        <span class="pub-title">Real-Time and Uncertainty-Aware Hospital Bed Assignment via a Hybrid Learning-Optimization Framework</span>
-        <div class="pub-meta">KES 2026 — 30th International Conference on Knowledge-Based and Intelligent Information &amp; Engineering Systems, Dublin, Ireland</div>
+        <div><span class="pub-tag">[KES]</span> <span class="pub-title">Real-Time and Uncertainty-Aware Hospital Bed Assignment via a Hybrid Learning-Optimization Framework</span></div>
+        <div class="pub-meta"><strong>Guifo Fodjo A.</strong> et al.</div>
+        <div class="pub-venue">30th International Conference on Knowledge-Based and Intelligent Information &amp; Engineering Systems — Dublin, Ireland</div>
       </div>
     </div>
 
     <div class="pub">
       <div class="pub-year">2023</div>
       <div>
-        <span class="pub-title">Separation of Concerns in an Edge-Based Compartmental Modeling Framework</span>
-        <div class="pub-meta">Guifo Fodjo A., Zeutouo J., Bowong S. — BIOINFORMATICS 2023 (BIOSTEC), pp. 262–269</div>
+        <div><span class="pub-tag">[BIOINFORMATICS]</span> <span class="pub-title">Separation of Concerns in an Edge-Based Compartmental Modeling Framework</span></div>
+        <div class="pub-meta"><strong>Guifo Fodjo A.</strong>, Zeutouo J., Bowong S.</div>
+        <div class="pub-venue">16th International Joint Conference on Biomedical Engineering Systems and Technologies (BIOSTEC), pp. 262–269</div>
         <div class="pub-doi"><a href="https://doi.org/10.5220/0011780200003414" rel="noopener">10.5220/0011780200003414</a></div>
       </div>
     </div>
@@ -156,8 +184,9 @@ footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);fon
     <div class="pub">
       <div class="pub-year">2022</div>
       <div>
-        <span class="pub-title">Separation of Concerns in Extended Epidemiological Compartmental Models</span>
-        <div class="pub-meta">Guifo Fodjo A., Ziane M., Stinckwich S., Anh B., Bowong S. — BIOINFORMATICS 2022 (BIOSTEC), pp. 152–159</div>
+        <div><span class="pub-tag">[BIOINFORMATICS]</span> <span class="pub-title">Separation of Concerns in Extended Epidemiological Compartmental Models</span></div>
+        <div class="pub-meta"><strong>Guifo Fodjo A.</strong>, Ziane M., Stinckwich S., Anh B., Bowong S.</div>
+        <div class="pub-venue">15th International Joint Conference on Biomedical Engineering Systems and Technologies (BIOSTEC), pp. 152–159</div>
         <div class="pub-doi"><a href="https://doi.org/10.5220/0010881900003123" rel="noopener">10.5220/0010881900003123</a></div>
       </div>
     </div>
@@ -165,8 +194,9 @@ footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--rule);fon
     <div class="pub">
       <div class="pub-year">2018</div>
       <div>
-        <span class="pub-title">Secure and Energy-Efficient Geocasting Protocol for Hierarchical Wireless Sensor Networks</span>
-        <div class="pub-meta">Kengne Tchendji V., Paho Nana B., Guifo Fodjo A. — CARI 2018, Stellenbosch, South Africa, pp. 131–142</div>
+        <div><span class="pub-tag">[CARI]</span> <span class="pub-title">Secure and Energy-Efficient Geocasting Protocol for Hierarchical Wireless Sensor Networks</span></div>
+        <div class="pub-meta">Kengne Tchendji V., Paho Nana B., <strong>Guifo Fodjo A.</strong></div>
+        <div class="pub-venue">African Conference on Research in Computer Science — Stellenbosch, South Africa, pp. 131–142</div>
       </div>
     </div>
 
